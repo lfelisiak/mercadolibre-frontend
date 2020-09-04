@@ -1,5 +1,5 @@
 import React,{useState} from "react";
-import { useHistory } from 'react-router-dom';
+import { useHistory,withRouter } from 'react-router-dom';
 import Header from '../components/Header';
 import Content from '../components/Content';
 import Footer from '../components/Footer';
@@ -17,4 +17,4 @@ const Details = (props)=>{
     )
 };
 
-export default Details;
+export default withRouter(Details);
