@@ -4,20 +4,23 @@ import { Card,Row,Col,Image } from "react-bootstrap";
 const Item = ({id,title,price,address,picture,free_shipping})=>{
     return (
         <>
-            <Card className="p-3">
-                <Row>
-                    <Col md={2}>
+            <Card>
+                <Row className="p-3">
+                    <Col md={2} className="pt-16 pb-16">
                         <Image className="w-100" src={picture}/>
                     </Col>
                     <Col md={8}>
-                        <Row>
-                            <Col className="text-left"><h4>$ {price.amount}</h4></Col>
+                        <Row className="mb-36">
+                            <Col className="text-left">
+                                <span className="font-24"> $ {price.amount} </span>
+                                <span className="text-right">{free_shipping}</span>
+                            </Col>
                         </Row>
                         <Row>
-                            <Col className="text-left"><h5>{title}</h5></Col>
+                            <Col className="text-left"><span className="font-18">{title}</span></Col>
                         </Row>
                     </Col>
-                    <Col md={2}><span>{address.state}</span></Col>
+                    <Col md={2}><span className="font-12">{address.state}</span></Col>
                 </Row>
             </Card>
         </>

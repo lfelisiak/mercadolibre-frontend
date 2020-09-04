@@ -31,7 +31,7 @@ const Items = (props) =>{
                 <Breadcrumb>
                 {
                      categories && categories.map(category => (
-                        <Breadcrumb.Item>{category}</Breadcrumb.Item>
+                        <Breadcrumb.Item key={category}>{category}</Breadcrumb.Item>
                     ))
                 }                
                 </Breadcrumb>

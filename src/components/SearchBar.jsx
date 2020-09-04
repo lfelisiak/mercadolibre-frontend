@@ -23,7 +23,7 @@ const SearchBar = (props)=>{
     return (
         <>
             <Form className="form-inline w-100" onSubmit={(e) => handleSubmit(e)}>
-                <InputGroup className="mb-3 w-100">
+                <InputGroup className="w-100">
                     <FormControl
                         placeholder="Nunca dejes de buscar..."
                         aria-label="search"
