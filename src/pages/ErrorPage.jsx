@@ -1,8 +1,8 @@
-import React,{useState} from "react";
+import React from "react";
 import { useHistory } from 'react-router-dom';
 import {Button} from 'react-bootstrap';
 
-const Search = (props)=>{
+const ErrorPage = (props)=>{
     return (
         <>
             <p>No se encontró lo que busca! <Button variant="light">Volver</Button> </p>
@@ -10,4 +10,4 @@ const Search = (props)=>{
     )
 };
 
-export default Search;
+export default ErrorPage;

@@ -15,7 +15,7 @@ export default class MeliService extends Service{
     }
 
     getItem = async (id) => {
-        return await this.get(`item/${id}`);
+        return await this.get(`items/${id}`);
     }
 
 

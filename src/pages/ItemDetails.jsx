@@ -1,18 +1,33 @@
-import React,{useState} from "react";
-import { useHistory,withRouter } from 'react-router-dom';
-import Header from '../components/Header';
-import Content from '../components/Content';
-import Footer from '../components/Footer';
-import { Breadcrumb,Col,Row } from "react-bootstrap";
+import React,{useState,useEffect} from "react";
+import { useHistory,useParams,withRouter } from 'react-router-dom';
+import { Col,Row } from "react-bootstrap";
+import ItemDetail from '../components/Item/ItemDetail';
+import MeliService from "../services/MeliService";
+import Breadcrumb from '../components/Breadcrumb';
 
 const Details = (props)=>{
+    const [item,setItem] = useState();
+    const [categories,setCategories] = useState([]);
+    let { id } = useParams();
+    useEffect(()=>{
+        const service = new MeliService();
+        const fetchData = async ()=>{
+            const apiResponse1 = await service.getItem(id);
+            console.debug("ResponseDetail",apiResponse1);
+            return apiResponse1;
+        }
+        (async function(){
+            const res = (await fetchData()).data;
+            setItem(res.item);
+            setCategories(res.categories);
+        })();
+    },[id]);
     return (
         <>
-            <Row>
-                <Col>
-                
-                </Col>
-            </Row>
+            <Breadcrumb items={categories}></Breadcrumb>
+            <div className="itemsContainer">
+                {item && <ItemDetail detail={item}></ItemDetail> }
+            </div>
         </>
     )
 };

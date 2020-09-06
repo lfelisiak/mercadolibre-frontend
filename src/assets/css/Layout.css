@@ -1,70 +1,46 @@
-/* Margins */
-.ml-16{
-    margin-left:1rem;
-}
-.ml-32{
-    margin-left:2rem;
-}
-.mr-16{
-    margin-right:1rem;
-}
-.mr-32{
-    margin-right:2rem;
-}
-.mt-16{
-    margin-top:1rem;
-}
-.mt-32{
-    margin-top:2rem;
-}
-.mb-16{
-    margin-bottom:1rem;
-}
-.mb-32{
-    margin-bottom:2rem;
-}
-/* Paddings */
-.pl-16{
-    margin-left:1rem;
-}
-.pl-32{
-    margin-left:2rem;
-}
-.pr-16{
-    margin-right:1rem;
-}
-.pr-32{
-    margin-right:2rem;
-}
-.pt-16{
-    margin-top:1rem;
-}
-.pt-32{
-    margin-top:2rem;
-}
-.pb-16{
-    margin-bottom:1rem;
-}
-.pb-32{
-    margin-bottom:2rem;
-}
-/* Font Sizes */
-.font-18{
-    font-size:1.125rem;
-}
-.font-24{
-    font-size:1.5rem;
-}
-.font-12{
-    font-size:0.75rem;
-}
-.font-14{
-    font-size: 0.875rem;
-}
-/* Images */
-.img-180{
-    width: 180px;
-}
+@import './Custom.css';
 .img-rounded{
     border-radius: 4px;
+}
+/* Breadcrumb */
+.breadcrumb li span{
+    color:#999
+}
+.breadcrumb li:last-child span {
+    font-weight: bold;
+}
+.breadcrumb-item::before{
+    padding-right: 0;
+}
+.breadcrumb .breadcrumb-item::before {
+    content: "";
+}
+.breadcrumb-item{
+    columns: #999999;
+}
+.breadcrumb-item svg{
+    margin-left:0.5rem;
+}
+.card{
+    border:0;
+}
+/* main */
+.itemsContainer{
+    background-color:white;
+}
+.card.itemList > * > * {
+    cursor: pointer;
+}
+/*Item Detail*/
+.buyIt{
+    background-color: #3483FA;
+}
+sup{
+    top: 1.2em;
+    font-size: 50%;
+}
+.cantVendidos::before{
+content:"-";
+margin-left:0.25rem;
+margin-right:0.25rem;
 }

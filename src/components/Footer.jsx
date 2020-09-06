@@ -3,7 +3,9 @@ import React from "react";
 const Footer = (props)=>{
     return (
         <>
-            <span>Hecho con ❤️ por <b>Luciano</b> para <b>MeLi</b></span>
+            <footer className="p-5">
+                <span>Hecho con ❤️ por <b>Luciano</b> para <b>MeLi</b></span>
+            </footer>
         </>
     )
 }

@@ -1,7 +1,7 @@
 @import 'assets/css/Layout.css';
 
 body{
-  background-color: #ebebeb;
+  background-color: #eeeeee;
 }
 
 .App {
@@ -9,7 +9,7 @@ body{
 }
 
 .header{
-  background-color:#fff159;
+  background-color:#ffe600;
 }
 .App-logo {
   height: 40vmin;

@@ -5,9 +5,13 @@ import {
   Route
 } from "react-router-dom";
 import './App.css';
+
+//Pages
 import Items from "./pages/Items"
 import ItemDetails from "./pages/ItemDetails"
+import ErrorPage from "./pages/ErrorPage"
 import Search from "./pages/Search"
+//Shared Components
 import Header from "./components/Header"
 import Content from "./components/Content"
 import Footer from "./components/Footer"
@@ -22,11 +26,14 @@ function App() {
                 <Route exact path="/">
                   <Search />
                 </Route>
-                <Route path="/items">
+                <Route exact  path="/items">
                   <Items />
                 </Route>
-                <Route path="/items/:id">
+                <Route exact path="/items/:id">
                   <ItemDetails />
+                </Route>
+                <Route exact path="/error">
+                  <ErrorPage />
                 </Route>
             </Switch>
           </Content>
