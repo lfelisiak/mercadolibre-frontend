@@ -16,7 +16,7 @@ const Details = (props)=>{
             console.debug("ResponseDetail",apiResponse1);
             return apiResponse1;
         }
-        (async function(){
+        (async ()=> {
             const res = (await fetchData()).data;
             setItem(res.item);
             setCategories(res.categories);

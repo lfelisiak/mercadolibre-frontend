@@ -1,5 +1,5 @@
-import React,{useState} from "react"
-import { useHistory } from 'react-router-dom'
+import React,{useState,useEffect} from "react"
+import { useHistory,withRouter } from 'react-router-dom'
 import {InputGroup,FormControl,Button,Form} from 'react-bootstrap'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faSearch } from '@fortawesome/free-solid-svg-icons'
@@ -7,8 +7,16 @@ import { faSearch } from '@fortawesome/free-solid-svg-icons'
 const SearchBar = (props)=>{
     let history = useHistory();
     const [search,setSearch] = useState("");
+    useEffect(()=>{
+        if(props.location && props.location.search)
+        {
+            let urlParam = new URLSearchParams(props.location.search).get(
+                "search"
+            );
+            setSearch(urlParam);
+        }
+    },[]);
     const handleChange = (value) => {
-        console.log("HandleChange",value);
         setSearch(value);
     }
     const handleSubmit = (event)=>{
@@ -16,7 +24,6 @@ const SearchBar = (props)=>{
         redirect();
     }
     const redirect = () => {
-        console.log("Redirect",search);
         if(search)
             history.push(`/items?search=${search}`,{search:search})
     } 
@@ -26,6 +33,7 @@ const SearchBar = (props)=>{
                 <InputGroup className="w-100">
                     <FormControl
                         placeholder="Nunca dejes de buscar..."
+                        value={search}
                         aria-label="search"
                         aria-describedby="searchbar"
                         onChange={(e) => { handleChange(e.target.value) }}
@@ -41,4 +49,4 @@ const SearchBar = (props)=>{
     )
 };
 
-export default SearchBar;
+export default withRouter(SearchBar);

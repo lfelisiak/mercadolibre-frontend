@@ -21,10 +21,13 @@
 .breadcrumb-item svg{
     margin-left:0.5rem;
 }
+/* main */
+.thumb{
+    border-radius: 4px;
+}
 .card{
     border:0;
 }
-/* main */
 .itemsContainer{
     background-color:white;
 }
@@ -40,7 +43,7 @@ sup{
     font-size: 50%;
 }
 .cantVendidos::before{
-content:"-";
-margin-left:0.25rem;
-margin-right:0.25rem;
+    content:"-";
+    margin-left:0.25rem;
+    margin-right:0.25rem;
 }

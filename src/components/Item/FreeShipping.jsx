@@ -4,7 +4,7 @@ import imageSrc from "../../assets/images/ic_shipping.png"
 const FreeShipping = ({freeShipping})=>{
     return (
         freeShipping &&
-        <Image src={imageSrc}></Image>
+        <Image src={imageSrc} className="ml-1"></Image>
     )
 }
 
